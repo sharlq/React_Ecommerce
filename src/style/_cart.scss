@@ -1,0 +1,142 @@
+.empty{
+    font-size: 5vw;
+    margin: 10vw auto;
+}
+.loading{
+    
+    font-size: 20vw;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+   i{
+       color: #0476f9d4 ;
+    margin: 10vw;
+       height: 20vw;
+       width: 20vw;
+   }
+.motion{
+    animation-duration: 4s;
+    animation-name: spin;
+    animation-iteration-count: infinite;
+   transform: rotate(60deg);
+   animation-timing-function: linear;
+}
+}
+.cart{
+    margin: auto;
+    margin-top: 2em;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+    .cartItems{
+    margin-left: 1vw;
+    width:80vw ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-bottom: 50vw;
+    }
+    
+}
+.cartControl{
+    background-color: whitesmoke;
+    height: 100vh;
+    
+    width:18vw;
+    display: flex;
+    flex-direction: column;
+    font-size:1.5vw;
+    justify-items: center;
+    width: 100% ;
+    p{
+        font-weight: 700;
+        margin:0 auto 0 auto;
+    }
+    .one{
+        margin-top: 2.5em;
+    }
+    .empty-btn{
+        font-size:1.5vw;
+        margin:2.5vw auto 0 auto;
+        font-weight: 700;
+        color: white;
+        padding: 1vw;
+        background-color: red;
+        border-radius: .5vw;
+        border: none;
+    }
+    .chechout-btn{
+        font-size:1.5vw;
+        margin:1vw auto 0 auto;
+        font-weight: 700;
+        color: white;
+        padding: 1vw;
+        background-color: #4caf50;
+        border-radius: .5vw;
+        border: none;
+    }
+}
+
+
+.R-btn{
+    position: absolute;
+    left: 1vw;
+    bottom: .1vw !important;
+    color: white;
+    background-color: red;
+    padding:.5vw;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 1vw;
+}
+
+.quantityControl{
+font-weight: 700;
+bottom: .5vw;
+position: absolute;
+right: 0vw;
+
+
+   
+.increase{
+    position: absolute;
+    right: 1vw;
+    bottom: 0;
+    color: white;
+    border-radius: 5px;
+    background-color: #4caf50;
+    font-size: 1.2vw;
+    font-weight: 700;
+    border: none;
+    padding: 0 .3vw 0 .3vw ;
+}
+.quantity{
+    position: absolute;
+    right: 2.5vw;
+    width: 2.5vw;
+    text-align: center;
+}
+.decrease{
+    position:absolute;
+    right: 5vw;
+    bottom: 0;
+    color: white;
+    border-radius: 5px;
+    background-color: #ffc300;
+    font-size: 1.2vw;
+    font-weight: 700;
+    border: none;
+    padding: 0 .4vw 0 .4vw ;
+}
+    }
+@keyframes spin{
+0%{
+    
+}
+100%{
+    
+        transform: rotate(420deg);
+    
+}
+}

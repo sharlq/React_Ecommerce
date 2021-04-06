@@ -1,0 +1,17 @@
+.confirmation{
+    padding: 2vw;
+   display: flex;
+   flex-direction: column;
+    font-size: 2vw;
+    h5{
+        margin: 1.5vw;
+    }
+    .divider{
+        margin: 2vw auto 2vw auto ;
+    }
+    button{
+        margin: 0 auto 0 auto !important;
+        font-size: 2vw;
+        align-self:center ;
+    }
+}

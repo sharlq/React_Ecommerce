@@ -1,0 +1,83 @@
+.products{
+
+    margin: auto;
+    margin-top: 5em;
+    width:80vw ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    &__product{
+        position: relative;
+        margin: 0.25em;
+        margin-top: 2.5em;
+        width: 18vw;
+        height: 25vw;
+        box-shadow: 1px 0px 7px rgba(0, 0,0 ,.1),
+                    -1px 0px 7px rgba(0, 0,0 ,.1);
+
+
+        .img-container{
+            width: 100%;
+            height: 15vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+
+        img{
+           max-width: 18vw;
+           height: 15vw;
+        }}
+
+
+        h2,h4,p{
+            margin: .35em;
+        }
+        p{
+            padding-top: .2vw;
+            text-align: justify;
+            max-height: 12vw;
+        }
+
+
+        &-info{
+            height: 10vw;
+            position: relative;
+            font-size: 1vw; // change it when responsive
+            top: -10px;
+            display: flex;
+            flex-direction: column;
+            h2{
+                display: block;
+                max-width: 14vw;
+                font-size: 1.2em;
+                position: absolute;
+                top: 5px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 1.3em;
+            }
+            i{
+                position: absolute;
+                bottom: 0px;
+                right: 6px;
+                font-size: 1.2vw;
+            }
+            p{
+                display: block;
+                position: absolute;
+                top: 2em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-height: 13vw;
+            }
+            h4{
+                position: absolute;
+                right: 0;
+                top:8px;
+    
+            }
+        }
+       
+    }
+    
+}

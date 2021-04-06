@@ -1,0 +1,136 @@
+.formcard{
+    margin: auto;
+    margin-top: 15vh;
+    width: 55vw;
+    
+    border-radius: .5vw;
+    box-shadow: 1px 0 7px rgba(0, 0, 0, .1),
+                -1px 0 7px rgba(0, 0, 0, .1);
+}
+.steps{
+    p{
+        margin-top: 2vw;
+        margin-right: .2vw;
+    }
+    display: flex;
+    justify-content: center;
+    .bar{
+        
+        margin-top: 3vw;
+        border-radius: 4vh;
+        width:40vw;
+        height: .2vw;
+        min-height: 2px;
+        background-color: $secondary;
+    }
+    .checked{
+        font-size: 2vw;
+        margin-top: 2.2vw;
+        margin-left: .5vw;
+        margin-right: .5vw;
+        color: #0476f9d4;
+    }
+    .step{
+        background-color: $secondary;
+        margin-top: 2.2vw;
+        color: white;
+        width: 2vw;
+        height: 2vw;
+        border-radius: 50%;
+        margin-left: .5vw;
+        margin-right: .5vw;
+        text-align: center;
+        font-size: 1.4vw;
+    }
+    .active{
+        background-color: #0476f9d4;
+    }
+    
+}
+h4{
+    margin-top: 3vw;
+    margin-left: 5%;
+}
+.form{
+    width: 90%;
+    margin: auto;
+    margin-top: 2vw;
+    margin-bottom: 1.5vw;
+    
+    .inputcontainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+    }
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .texti{
+        padding: 0 .5vw 0 .5vw;
+        margin-bottom:1vw ;
+        border: 1px  #4a4e5b14 solid;
+        border-bottom: 2px #4a4e5ba3  solid ;
+        height: 3vw;
+        width: 90%;
+    }
+    .select{
+        padding: 0 .5vw 0 .5vw;
+        margin-bottom:1vw ;
+        border: 1px  #4a4e5b14 solid;
+        border-bottom: 2px #4a4e5ba3  solid ;
+        height: 3vw;
+        width: 90%;
+    }
+    .select-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+        border-top:2px $secondary solid;
+        padding-top: 2vw;
+        width: 100%;
+    }
+    label{
+        align-self: start;
+        margin-top: 1.5vw;
+        margin-bottom: 1vw;
+    }
+}
+.checkout-control{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin: 0 auto 0 auto;
+    
+    
+}
+.review{
+    margin-top: 2vw;
+    &-list{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        
+    }
+    li{
+        font-weight: 500;
+        list-style: none;
+        margin-left: 3vw;
+    }
+    h4{
+        margin-left: 3vw;
+        margin-bottom: .5vw;
+    }
+    p{
+        font-size: .8em;
+        margin-bottom: 1.5vw;
+    }
+}
+
+.stripeform{
+    width: 90%;
+    margin: 0 auto 2vw auto;
+}
+
+

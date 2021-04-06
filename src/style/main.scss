@@ -1,0 +1,67 @@
+@import "config";
+@import  "products";
+@import "navbar";
+@import "cart";
+@import "checkout";
+@import "confirmation";
+
+#root{
+    height: inherit;
+}
+.btn{
+   padding: 1vw;
+    font-size: 2.2vw;
+    border: none;
+    color: white;
+    background-color: red;
+    border-radius: 5px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 2vw;
+}
+.btn:focus{
+    border: none;
+}
+.bg-w{
+background-color: #ff8507c2;
+}
+.bg-p{
+background-color: #1c76fdfa;
+}
+.eq{
+    margin-bottom:2.5vw;
+}
+.divider{
+    width: 90%;
+    height: 1px;
+    background-color:$secondary;
+    margin: 0 auto 2vw auto;
+}
+.mr-b{
+    margin-bottom: 1vw;
+}
+
+.btn-pay{
+    
+    font-size: 1.5vw;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 2vw;
+    padding:1vw 2vw 1vw 2vw;
+}
+
+.bg-g{
+    background-color: #4caf50;
+}
+.mar-l{
+    margin-left: 2vw;
+}
+.mar-sides{
+    margin: 0 auto 0 auto;
+}
+@import "responsive";

@@ -1,0 +1,70 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white ;
+    z-index: 2;
+    height: 60px;
+    display: flex;
+    box-shadow: 1px 0px 5px rgba(0 ,0, 0, .5)  ;
+    
+    .logo{
+        margin: auto 0 auto 10px;
+        font-size: 24px;
+    }
+    .cart{
+        font-size: 1.5em;
+        margin: auto 0 auto 0;
+        position: absolute;
+        right: 10px;
+        top:20px; 
+    }
+    .search-box{
+        position:absolute ;
+        right: 50px;
+        top: 20px;
+        margin: auto 0 auto 0;
+        height: 25px;
+        border: 0;
+        outline: none;
+        padding-left: 5px;
+        box-shadow: inset  1px 1px 1px rgba(0, 0,0 ,.1),
+                    inset -1px -1px 1px rgba(0, 0,0 ,.1) ;
+    }
+  ;
+
+        .cartItemsNumber{
+            color: white;
+            background-color: red;
+            border-radius: 50%;
+            padding: .10em .5em .10em .5em;
+           z-index: 3;
+           text-align: center;
+            font-size: .8em; 
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: 1px white solid;
+        }
+    
+}
+
+.cartItemsNumber-d{
+    display: none;
+}
+.textContainer-d{
+    display: none;
+}
+.cartItemsNumber1{
+    color: white;
+    background-color: red;
+    border-radius: 50%;
+    padding: .10em .3em .10em .3em;
+   z-index: 3;
+   text-align: center;
+    font-size: .8em; 
+    position: absolute;
+    top: 8px;
+    right: 2px;
+    border: 1px white solid;
+}
