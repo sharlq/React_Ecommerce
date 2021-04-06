@@ -12,7 +12,7 @@ i have created this project using
 4-sass to style the project  
 
 
-how does the store work  
+# how does the store work  
 1- you can add the product you want to sell to your store through your commerce.js account and they will be mapped automatically to your store  
 2- the money transaction is handled by stripe  
 3- you have a filter search in the navigation  bar if you know what you are looking for  
