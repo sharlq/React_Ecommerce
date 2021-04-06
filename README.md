@@ -13,7 +13,7 @@ i have created this project using
 
 
 how does the store work
-1- you can add the product you want to sell to your store through your commerce.js account and they will be mapped automatically to your store
+1- you can add the product you want to sell to your store through your commerce.js account and they will be mapped automatically to your store  
 2- the money transaction is handled by stripe
 3- you have a filter search in the navigation  bar if you know what you are looking for
 4- add the products you want to buy to the cart
