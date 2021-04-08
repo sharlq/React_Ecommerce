@@ -10,6 +10,7 @@ i have created this project using
 2-stripe to provide secure mony transaction  
 3-React to create the front end  
 4-sass to style the project  
+5-I haven't paid so much attention to the aesthetics of the website because I wanted to focus on learning React
 
 
 # how does the store work  
