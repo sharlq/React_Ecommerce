@@ -26,9 +26,9 @@ i have created this project using
 
 
 
-# though this project i have learned  
- practiced react  
+# through this project i have learned  
+ practiced react ,react-router-dom , react-hook-form  
  to utilise APIs   
  to use commercejs and stripe   
- react-hook-form  
+
  
