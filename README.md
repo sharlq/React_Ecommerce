@@ -28,7 +28,7 @@ i have created this project using
 
 # through this project i have learned  
  practiced react ,react-router-dom , react-hook-form  
- to utilise APIs   
+ to utilise APIs and to use a chain of APIs where each one depends on the previous API   
  to use commercejs and stripe   
 
  
