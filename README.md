@@ -30,5 +30,5 @@ i have created this project using
  practiced react ,react-router-dom , react-hook-form  
  to utilise APIs and to use a chain of APIs where each one depends on the previous API   
  to use commercejs and stripe   
-
+ to use the documentation and API references of a website or service in my projects
  
