@@ -36,6 +36,7 @@ const Cart = ({cart , UpdateCart , RemoveItem ,Empty}) => {
             </Link>
             <div className="cartControl">
             <p className="one">Total coast:</p>
+            
             <p> {cart.subtotal.formatted_with_code}</p>
 
             <Link to="/checkout"  className="margin-auto-sides">
