@@ -99,15 +99,13 @@ button {
           flex-direction: column;
 }
 
-.products__product-info h2 {
+.products__product-info .name {
   display: block;
-  max-width: 14vw;
-  font-size: 1.2em;
+  font-size: .8em;
   position: absolute;
   top: 5px;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 1.3em;
 }
 
 .products__product-info i {
@@ -126,10 +124,10 @@ button {
   max-height: 13vw;
 }
 
-.products__product-info h4 {
+.products__product-info .price {
   position: absolute;
-  right: 0;
-  top: 8px;
+  left: 0;
+  bottom: -5px;
 }
 
 .navbar {
@@ -720,9 +718,6 @@ h4 {
     height: 17vw;
     font-size: 1.6vw;
   }
-  .products__product-info h2 {
-    max-width: 20vw;
-  }
   .products__product-info i {
     font-size: 2vw;
   }
@@ -865,9 +860,6 @@ h4 {
   .products__product-info {
     height: 42vw;
     font-size: 4.5vw;
-  }
-  .products__product-info h2 {
-    max-width: 42vw;
   }
   .products__product-info i {
     font-size: 6vw;

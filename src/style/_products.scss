@@ -46,15 +46,13 @@
             top: -10px;
             display: flex;
             flex-direction: column;
-            h2{
+            .name{
                 display: block;
-                max-width: 14vw;
-                font-size: 1.2em;
+                font-size: .8em;
                 position: absolute;
                 top: 5px;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                max-height: 1.3em;
             }
             i{
                 position: absolute;
@@ -70,10 +68,10 @@
                 text-overflow: ellipsis;
                 max-height: 13vw;
             }
-            h4{
+            .price{
                 position: absolute;
-                right: 0;
-                top:8px;
+                left: 0;
+                bottom:-5px;
     
             }
         }
