@@ -10,11 +10,11 @@ const onAddtocart = ()=> onAdd(item.id,1);
             <img src={item.media.source} alt="product" />
             </div>
             <div className="products__product-info">
-            <h2>{item.name}</h2>
+            <h2 className="name">{item.name}</h2>
             
-            <RenderHTML  HTML={item.description} />
+            {/* <RenderHTML  HTML={item.description} /> */}
            
-            <h4>{item.price.formatted_with_symbol}</h4>
+            <h4 className="price">{item.price.formatted_with_symbol}</h4>
             <i className="fas fa-cart-arrow-down" onClick={ onAddtocart}></i>
             
             </div>
