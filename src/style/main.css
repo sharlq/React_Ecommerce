@@ -40,7 +40,6 @@ button {
 
 .products {
   margin: auto;
-  margin-top: 5em;
   width: 80vw;
   display: -ms-grid;
   display: grid;
@@ -130,9 +129,20 @@ button {
   bottom: -5px;
 }
 
+.products__product-info .cartProductName {
+  margin: 3vh 1vw 0 1vw !important;
+}
+
+.products__product-info .cartPrice {
+  position: absolute;
+  bottom: 4vh;
+  right: 2vw;
+}
+
 .navbar {
   width: 100%;
   background-color: white;
+  position: relative;
   z-index: 2;
   height: 80px;
   display: -webkit-box;
@@ -150,13 +160,14 @@ button {
   font-size: 24px;
 }
 
-.navbar .cart {
+.navbar .navCart {
   font-size: 1.5em;
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 0;
   margin-right: 10px;
   position: relative;
+  top: 25px;
 }
 
 .navbar .search {
@@ -207,8 +218,8 @@ button {
   text-align: center;
   font-size: .8em;
   position: absolute;
-  top: 15px;
-  right: 10px;
+  top: 20px;
+  right: 5px;
   border: 1px white solid;
 }
 
@@ -229,8 +240,8 @@ button {
   text-align: center;
   font-size: .8em;
   position: absolute;
-  top: 8px;
-  right: 2px;
+  top: 20px;
+  right: 5px;
   border: 1px white solid;
 }
 
@@ -275,8 +286,6 @@ button {
 
 .cart {
   margin: auto;
-  margin-top: 2em;
-  height: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 8fr 2fr;
@@ -761,6 +770,11 @@ h4 {
   .products__product-info i {
     font-size: 1.6vw;
   }
+  .products__product-info .cartPrice {
+    position: absolute;
+    bottom: 3vw;
+    right: 1.5vw;
+  }
   .cart .cartItems {
     -ms-grid-columns: 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr;
@@ -816,6 +830,8 @@ h4 {
         align-content: center;
     margin: 0;
     margin-right: 10px;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
   }
   .cart .products__product-info {
     font-size: 2vw;
@@ -829,10 +845,6 @@ h4 {
   }
   .cart .cartItems .products__product {
     width: 38vw;
-  }
-  .cartItemsNumber {
-    top: 8px !important;
-    right: 10px !important;
   }
   .cartControl {
     position: inherit;
@@ -999,13 +1011,16 @@ h4 {
   .products__product-info i {
     font-size: 6vw;
   }
+  .products__product-info .cartPrice {
+    position: absolute;
+    bottom: 1vw;
+    right: 30vw;
+  }
   .cart {
-    height: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 5em;
   }
   .cart .products__product-info {
     font-size: 4vw;

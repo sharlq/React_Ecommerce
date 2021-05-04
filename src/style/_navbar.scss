@@ -1,6 +1,7 @@
 .navbar{
     width: 100%;
     background-color: white ;
+    position: relative;
     z-index: 2;
     height: 80px;
     display: flex;
@@ -11,12 +12,13 @@
         margin: auto 0 auto 10px;
         font-size: 24px;
     }
-    .cart{
+    .navCart{
         font-size: 1.5em;
         align-content:center  ;
         margin: 0;
         margin-right: 10px;
         position: relative;
+        top: 25px
     }
     .search{
         justify-self: center;
@@ -59,8 +61,8 @@
            text-align: center;
             font-size: .8em; 
             position: absolute;
-            top: 15px;
-            right: 10px;
+            top: 20px;
+            right: 5px;
             border: 1px white solid;
         }
     
@@ -81,7 +83,7 @@
    text-align: center;
     font-size: .8em; 
     position: absolute;
-    top: 8px;
-    right: 2px;
+    top: 20px;
+    right: 5px;
     border: 1px white solid;
 }

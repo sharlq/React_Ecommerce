@@ -11,9 +11,9 @@ const CartItem = ({cart,handleUpdateCart,handleRemoveItem}) => {
             <img src={cart.media.source} alt="product" />
             </div>
             <div className="products__product-info">
-            <h2>{cart.product_name}</h2>
+            <h6 className="cartProductName ">{cart.product_name}</h6>
            
-            <h4>{cart.price.formatted_with_symbol}</h4>
+            <h5 className="cartPrice">{cart.price.formatted_with_symbol}</h5>
             <div className="quantityControl">
 
                 <div className="inContainer" onClick={inc}>

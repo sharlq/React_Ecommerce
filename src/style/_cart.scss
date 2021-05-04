@@ -26,8 +26,7 @@
 }
 .cart{
     margin: auto;
-    margin-top: 2em;
-    height: 100%;
+    
     display: grid;
     grid-template-columns: 8fr 2fr;
     .cartItems{
@@ -42,7 +41,6 @@
 .cartControl{
     background-color: whitesmoke;
     height: 100vh;
-    
     width:18vw;
     display: flex;
     flex-direction: column;
