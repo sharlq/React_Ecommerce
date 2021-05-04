@@ -1,6 +1,6 @@
 import React from 'react'
 import Product from './product/product'
-import {Link} from "react-router-dom"
+
 
 const Products = ({products,onAdd,searchTerm,openProductPage}) => {
     console.log(products)
@@ -8,7 +8,7 @@ const Products = ({products,onAdd,searchTerm,openProductPage}) => {
      if(searchTerm==""){
          return val
      }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){return val}
- }).map(i  =><Link to="/product" onClick={()=>openProductPage(i)}> <Product item={i} onAdd={onAdd} /> </Link>);
+ }).map(i  => <Product item={i} onAdd={onAdd} openProductPage={openProductPage} /> );
     return (
         <div className="products">
             {prod}
