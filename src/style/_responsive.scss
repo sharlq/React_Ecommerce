@@ -19,9 +19,15 @@
                 i{
                     font-size: 1.6vw ;
                 }
+                .cartPrice{
+                    position: absolute;
+                    bottom: 3vw ;
+                    right:  1.5vw ;
+                }
              }
             
             }
+            
         
     }
 
@@ -90,6 +96,7 @@
         align-content:center  ;
         margin: 0;
         margin-right: 10px;
+        grid-template-columns:1fr;
         .products__product-info{
             font-size: 2vw;
         }
@@ -105,12 +112,7 @@
         
        
     }
-    .cartItemsNumber{
    
-        top: 8px !important;
-        right: 10px !important;
-        
-    }
     .cartControl{
         position: inherit;
          bottom: 0px;
@@ -288,6 +290,11 @@
                 i{
                     font-size: 6vw ;
                 }
+                .cartPrice{
+                    position: absolute;
+                    bottom: 1vw ;
+                    right:  30vw ;
+                }
              }
             
             }
@@ -296,9 +303,7 @@
 
     ///////////////////////////////////////////////////////////////////////////////
     .cart{
-        height: 100%;
         flex-direction: column;
-        margin-top: 5em;
         .products__product-info{
             font-size: 4vw;
         }
