@@ -1145,8 +1145,52 @@ h4 {
     font-size: 3vw;
     padding: 1vw 3vw 1vw 3vw;
   }
-  .search-box {
-    width: 20vw;
+  .navbar {
+    height: 100px;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+        grid-template-areas: "logo cart" "search search";
+    -webkit-box-pack: stretch !important;
+        -ms-flex-pack: stretch !important;
+            justify-content: stretch !important;
+  }
+  .navbar .logo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: logo;
+  }
+  .navbar .navCartBox {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: cart;
+  }
+  .navbar .search-box {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    -ms-grid-row: 2 !important;
+    -ms-grid-column: 1 !important;
+    -ms-grid-column-span: 2 !important;
+    grid-area: search !important;
+    width: 80vw !important;
+  }
+  .navbar .navCart {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 15px;
+    position: static;
+    -webkit-box-pack: end !important;
+        -ms-flex-pack: end !important;
+            justify-content: flex-end !important;
+    -ms-flex-line-pack: unset;
+        align-content: unset;
+  }
+  .navbar .cartItemsNumber {
+    top: 5px;
+  }
+  .navbar .cartItemsNumber1 {
+    top: 5px;
   }
 }
 /*# sourceMappingURL=main.css.map */
