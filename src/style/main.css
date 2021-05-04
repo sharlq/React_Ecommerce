@@ -627,6 +627,10 @@ h4 {
   width: 40vw;
 }
 
+.productPage .hidden {
+  display: none;
+}
+
 .productPage ul {
   -webkit-text-decoration: solid;
           text-decoration: solid;
@@ -704,6 +708,10 @@ h4 {
 
 .mr-b {
   margin-bottom: 1vw;
+}
+
+.mr-t {
+  margin-top: 1vh;
 }
 
 .btn-pay {
@@ -914,6 +922,55 @@ h4 {
   .btn {
     font-size: 3vw;
     padding: 1vw 3vw 1vw 3vw;
+  }
+  .productPage {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .productPage .media {
+    margin: 5vh auto;
+    padding: 0;
+    width: 80vw;
+    border: none;
+  }
+  .productPage .media img {
+    width: 80vw;
+  }
+  .productPage .info {
+    margin: 0 10vw;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: 1fr 5fr;
+        grid-template-rows: 1fr 5fr;
+  }
+  .productPage .hidden {
+    display: -webkit-box  !important;
+    display: -ms-flexbox  !important;
+    display: flex  !important;
+    margin-bottom: 3vh;
+  }
+  .productPage .hidden .title {
+    padding-bottom: 2vh;
+  }
+  .productPage .hide {
+    display: none !important;
+  }
+  .productPage .control {
+    width: 70vw;
+    border: none;
+    margin: 0 auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+  }
+  .productPage .control .btn {
+    margin-top: 0;
+    margin-left: 2vw;
+  }
+  .productPage .info {
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
   }
 }
 
