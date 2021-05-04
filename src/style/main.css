@@ -131,15 +131,16 @@ button {
 }
 
 .navbar {
-  position: fixed;
-  top: 0;
   width: 100%;
   background-color: white;
   z-index: 2;
-  height: 60px;
+  height: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.5);
           box-shadow: 1px 0px 5px rgba(0, 0, 0, 0.5);
 }
@@ -151,21 +152,48 @@ button {
 
 .navbar .cart {
   font-size: 1.5em;
-  margin: auto 0 auto 0;
-  position: absolute;
-  right: 10px;
-  top: 20px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0;
+  margin-right: 10px;
+  position: relative;
+}
+
+.navbar .search {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 
 .navbar .search-box {
-  position: absolute;
-  right: 50px;
-  top: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: auto 0 auto 0;
-  height: 25px;
+  height: 35px;
   border: 0;
   outline: none;
   padding-left: 5px;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.1);
+  width: 35vw;
+}
+
+.navbar .search-btn {
+  border-radius: 0 50% 50% 0;
+  height: 35px;
+  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.1);
+  width: 60px;
+}
+
+.navbar .search .select-catigory {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 35px;
+  outline: none;
+  border: none;
   -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.1);
           box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.1), inset -1px -1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -179,7 +207,7 @@ button {
   text-align: center;
   font-size: .8em;
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
   border: 1px white solid;
 }
@@ -581,6 +609,59 @@ h4 {
       align-self: center;
 }
 
+.productPage {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 2fr 1fr;
+      grid-template-columns: 2fr 2fr 1fr;
+}
+
+.productPage .media {
+  margin: 5vh 4vw;
+  padding: 0 1vw;
+  width: 40vw;
+  border-right: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+.productPage .media img {
+  width: 40vw;
+}
+
+.productPage ul {
+  -webkit-text-decoration: solid;
+          text-decoration: solid;
+  list-style: disc !important;
+}
+
+.productPage li {
+  list-style-type: disc !important;
+  margin-top: 20px;
+}
+
+.productPage .info {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 5fr;
+      grid-template-rows: 1fr 5fr;
+}
+
+.productPage .title {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+.productPage .control {
+  margin-top: 5vh;
+  padding: 5vh 2vw;
+  margin-left: 1vw;
+  border-left: solid 1px rgba(0, 0, 0, 0.3);
+}
+
+.productPage .control .btn {
+  margin-top: 5vh;
+  background-color: seagreen;
+  font-size: 1em;
+}
+
 #root {
   height: inherit;
 }
@@ -722,14 +803,11 @@ h4 {
     font-size: 2vw;
   }
   .cart {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    font-size: 1.5em;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 0;
+    margin-right: 10px;
   }
   .cart .products__product-info {
     font-size: 2vw;
@@ -743,6 +821,10 @@ h4 {
   }
   .cart .cartItems .products__product {
     width: 38vw;
+  }
+  .cartItemsNumber {
+    top: 8px !important;
+    right: 10px !important;
   }
   .cartControl {
     position: inherit;
@@ -833,10 +915,6 @@ h4 {
     font-size: 3vw;
     padding: 1vw 3vw 1vw 3vw;
   }
-  .cartItemsNumber {
-    top: 8px !important;
-    right: 3px !important;
-  }
 }
 
 @media only screen and (max-width: 760px) {
@@ -866,10 +944,6 @@ h4 {
   }
   .cart {
     height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;

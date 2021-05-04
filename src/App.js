@@ -3,11 +3,13 @@ import { commerce } from "./lib/commerce"
 import Products from './components/products'
 import Navbar from './components/Navbar'
 import Cart from "./components/cart/cart"
+import ProductPage from "./components/product/ProductPage"
 import {BrowserRouter as Router, Switch ,Route} from "react-router-dom"
 import Checkout from "./components/checkout/checkout"
 
 const  App = () => {
     const [products, setProducts] = useState([]);
+    const [product,setProduct] = useState({})
     const [cart, setCart] = useState({});
     const [order,setOrder] = useState({});
     const [errorMessage,setErrorMessage]= useState("")
@@ -74,6 +76,9 @@ const  App = () => {
         }
     }
 
+    const handleProductPage = async(item)=>{
+        setProduct(item)
+    }
     
 
     console.log(products,cart);
@@ -89,7 +94,11 @@ const  App = () => {
             <Switch>
 
             <Route path="/" exact>
-            <Products products={products} onAdd={handleAddToCart} searchTerm={searchTerm}/> 
+            <Products 
+            products={products} 
+            onAdd={handleAddToCart}
+            openProductPage={handleProductPage}
+            searchTerm={searchTerm}/> 
             </Route>
 
             <Route path="/cart">
@@ -105,6 +114,13 @@ const  App = () => {
                   order={order}
                   onCaptureCheckout={handleCaptureCheckout}
                   error={errorMessage}/>
+             </Route>
+
+             <Route path="/product">
+                 <ProductPage
+                  onAdd={handleAddToCart}
+                  product={product}
+                  />
              </Route>
 
              </Switch>
