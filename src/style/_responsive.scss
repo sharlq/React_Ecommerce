@@ -86,9 +86,10 @@
     //////////////////////////////////////////////////////////////////
     .cart{
         
-        display: flex;
-        position: relative;
-        flex-direction: column;
+        font-size: 1.5em;
+        align-content:center  ;
+        margin: 0;
+        margin-right: 10px;
         .products__product-info{
             font-size: 2vw;
         }
@@ -101,7 +102,14 @@
                 width: 38vw;
             }
         }
+        
        
+    }
+    .cartItemsNumber{
+   
+        top: 8px !important;
+        right: 10px !important;
+        
     }
     .cartControl{
         position: inherit;
@@ -205,12 +213,7 @@
 }
 
 /////////////////////////////////////////////////
-.cartItemsNumber{
-   
-    top: 8px !important;
-    right: 3px !important;
-    
-}
+
 
 }
 
@@ -249,8 +252,6 @@
     ///////////////////////////////////////////////////////////////////////////////
     .cart{
         height: 100%;
-        display: flex;
-        position: relative;
         flex-direction: column;
         margin-top: 5em;
         .products__product-info{
