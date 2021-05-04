@@ -436,7 +436,40 @@
 }
 
 /////////////////////
-.search-box{
-    width : 20vw ;
+.navbar{
+    height: 100px;
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    "logo cart"
+    "search search";
+    justify-content: stretch !important;
+    .logo{
+        grid-area: logo;
+
+    }
+    .navCartBox{
+        
+        grid-area: cart;
+    }
+   .search-box{
+       justify-self: center;
+        grid-area: search !important;
+        width: 80vw !important;
+    }
+    .navCart{
+        display: flex;
+    margin-top: 15px;
+    position: static; 
+    justify-content: flex-end !important;
+    align-content: unset;
+    }
+    .cartItemsNumber{
+       top:5px
+    }
+    .cartItemsNumber1{
+        top:5px
+     }
 }
+
 }

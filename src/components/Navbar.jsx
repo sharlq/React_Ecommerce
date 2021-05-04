@@ -22,7 +22,7 @@ const Navbar = ({cartt,search}) => {
             </Link>
 
             <input type="searchbox" className="search-box" placeholder="Search..." onChange={(event)=>{search(event.target.value)}}></input>
-            <Link to="/cart">
+            <Link className="navCartbox" to="/cart">
             <div className={cartt.total_items > 0 ? `textContainer` : `textContainer-d` }><p className={cartt.total_items > 0 ? cartItems : `cartItemsNumber-d` }>{count}</p></div>
             <div className="navCart">
            
