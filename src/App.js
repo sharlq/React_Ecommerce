@@ -14,7 +14,15 @@ const  App = () => {
     const [order,setOrder] = useState({});
     const [errorMessage,setErrorMessage]= useState("")
     const [searchTerm,setSearchTerm]= useState("")
+    const [categorys,setCategorys] = useState()
+
+    const fetchCategorys = async() => {
+        const responce = await commerce.categories.list()
+        setCategorys(responce)}
     
+    
+    console.log(categorys)
+
     const searchFilter = (val) => {
         setSearchTerm(val)
         console.log(val);
@@ -38,6 +46,7 @@ const  App = () => {
     useEffect(()=>{
         fetchProducts();
         fetchCart();
+        fetchCategorys();
        // emptyCart ();
     },[])
 
@@ -76,8 +85,15 @@ const  App = () => {
         }
     }
 
-    const handleProductPage = async(item)=>{
+    const handleProductPage = (item)=>{
         setProduct(item)
+    }
+
+    const handleCategory = (cat) =>{
+        const categoryProducts = products.filter((i)=>{return cat===i.categories[0].name})
+        console.log(categoryProducts)
+        setProducts(categoryProducts)
+
     }
     
 
@@ -98,7 +114,9 @@ const  App = () => {
             products={products} 
             onAdd={handleAddToCart}
             openProductPage={handleProductPage}
-            searchTerm={searchTerm}/> 
+            searchTerm={searchTerm}
+            onCategory={handleCategory}
+            categorys={categorys}/> 
             </Route>
 
             <Route path="/cart">

@@ -26,7 +26,6 @@
 }
 .cart{
     margin: auto;
-    
     display: grid;
     grid-template-columns: 8fr 2fr;
     .cartItems{
@@ -37,6 +36,96 @@
     margin-bottom: 50vw;
     }
     
+        .products{
+        
+            margin: auto;
+            width:80vw ;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            
+            &__product{
+                position: relative;
+                margin: 0.25em;
+                margin-top: 2.5em;
+                width: 18vw;
+                height: 25vw;
+                box-shadow: 1px 0px 7px rgba(0, 0,0 ,.1),
+                            -1px 0px 7px rgba(0, 0,0 ,.1);
+        
+        
+                .img-container{
+                    width: 100%;
+                    height: 15vw;
+                    overflow: hidden;
+                    display: flex;
+                    justify-content: center;
+        
+                img{
+                   max-width: 18vw;
+                   height: 15vw;
+                }}
+        
+        
+                h2,h4,p{
+                    margin: .35em;
+                }
+                p{
+                    padding-top: .2vw;
+                    text-align: justify;
+                    max-height: 12vw;
+                }
+        
+        
+                &-info{
+                    height: 10vw;
+                    position: relative;
+                    font-size: 1vw; // change it when responsive
+                    top: -10px;
+                    display: flex;
+                    flex-direction: column;
+                    .name{
+                        display: block;
+                        font-size: .8em;
+                        position: absolute;
+                        top: 5px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    i{
+                        position: absolute;
+                        bottom: 0px;
+                        right: 6px;
+                        font-size: 1.2vw;
+                    }
+                    p{
+                        display: block;
+                        position: absolute;
+                        top: 2em;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        max-height: 13vw;
+                    }
+                    .price{
+                        position: absolute;
+                        left: 0;
+                        bottom:-5px;
+            
+                    }
+                    .cartProductName{ 
+                        margin:3vh 1vw 0 1vw !important;
+                    }
+                    .cartPrice{
+                        position: absolute;
+                        bottom: 4vh;
+                        right:  2vw;
+                    }
+                    
+                }
+               
+            }
+            
+        }
+        
 }
 .cartControl{
     background-color: whitesmoke;
