@@ -2,7 +2,7 @@ import React ,{useState,useEffect} from 'react'
 import Product from './product/product'
 
 
-const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onCategory,onSort}) => {
+const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onPriceFilter,onCategory,onSort}) => {
 const [categorysButtons, setCategorysButtons] = useState([])
 const [open, setOpen] = useState(false)
 
@@ -43,6 +43,13 @@ useEffect(()=>{if(categorys){
             <button className="btn" onClick={()=>onSort("incremental")}>Sort by price incremental</button>
             <button className="btn" onClick={()=>onSort("decremental")}>Sort by price decremental</button>
             </div>
+
+            <div className="sorting">
+            <h3>Price filter</h3>
+            <button className="btn" onClick={()=>onPriceFilter(100)}>Product &lt; 100$</button>
+            <button className="btn" onClick={()=>onPriceFilter(1000)}>Product &lt; 1000$</button>
+            </div>
+
         </div>
         <div className="products">
             

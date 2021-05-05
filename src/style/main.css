@@ -39,6 +39,7 @@ button {
 }
 
 .home {
+  height: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 4fr;
@@ -127,7 +128,7 @@ button {
 
 .home .mainControls .btn {
   font-size: 1em;
-  width: 150px;
+  width: 165px;
   background: #00a0fd;
   color: white;
   margin-top: 20px;
@@ -148,7 +149,7 @@ button {
 }
 
 .home .products {
-  margin: auto;
+  margin: 0 auto 0 auto;
   width: 80vw;
   display: -ms-grid;
   display: grid;
