@@ -5,7 +5,11 @@ import Product from './product/product'
 const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onPriceFilter,onCategory,onSort}) => {
 const [categorysButtons, setCategorysButtons] = useState([])
 const [open, setOpen] = useState(false)
+const [controlsStyle,setControlsStyle] = useState("mainControls")
 
+const handleControlsDropdown = () =>{
+    setControlsStyle("mainControls drop")
+}
 useEffect(()=>{if(categorys){
      setCategorysButtons(()=>categorys.data.map((i)=><li className="" onClick={()=>onCategory(i.name)}>{i.name}</li> ))
 }},[products,categorys])
@@ -24,9 +28,14 @@ useEffect(()=>{if(categorys){
  
  return (
         <di className="home">
-        <div className="mainControls">
+        <div className={controlsStyle}
+         onClick={()=>setControlsStyle("mainControls drop")}
+         onBlur={()=>setControlsStyle("mainControls")}
+         tabIndex="-1">
+            <h4 className="title">Controls <i class="fas fa-caret-down arrow "></i></h4>
             <div className="categoryes">
-                <div onBlur={()=>setOpen(false)} tabIndex="0">
+                <div onBlur={()=>setOpen(false)}
+                 tabIndex="0">
 
                 <div className="dropDownList" 
                 onClick={()=>setOpen((prev)=>!prev)}>
