@@ -36,6 +36,7 @@
     margin-bottom: 50vw;
     }
     
+    
         .products{
         
             margin: auto;
@@ -199,8 +200,8 @@ right: 0vw;
     padding: 0 .3vw 0 .3vw ;
 }
 .quantity{
-    position: absolute;
-    right: 2.5vw;
+    position: absolute !important;
+    right: 2.5vw !important;
     width: 2.5vw;
     text-align: center;
 }
