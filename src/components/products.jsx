@@ -1,27 +1,33 @@
 import React ,{useState,useEffect,useRef} from 'react'
 import Product from './product/product'
-
+import MainControl from './controls/controls'
 
 const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onPriceFilter,onCategory,onSort}) => {
-const [categorysButtons, setCategorysButtons] = useState([])
+const [categoriesItems, setCategoriesItems] = useState([])
 const [open, setOpen] = useState(false)
 const [controlsStyle,setControlsStyle] = useState("mainControls")
 const categoriesList = useRef()
-const handleControlsDropdown = () =>{
-    setControlsStyle("mainControls drop")
-}
+
+
 useEffect(()=>{if(categorys){
-     setCategorysButtons(()=>categorys.data.map((i)=><li className="" onClick={()=>onCategory(i.name)}>{i.name}</li> ))
+     setCategoriesItems(()=>categorys.data.map((i)=><li className="" onClick={()=>onCategory(i.name)}>{i.name}</li> ))
 }},[products,categorys])
 
 
-const onBlur = () =>{
+const handleControlsDropdown = () =>{
+    setControlsStyle("mainControls drop")
+}
+const onBlurControlsDropdown = () =>{
     setTimeout(()=>{
     if (document.activeElement !== categoriesList.current) {
-
         setControlsStyle("mainControls")      }
-    },50)
-       
+    },50)       
+}
+const onBlurCategoriesList = () => {
+    setOpen(false)
+}
+const handleOpenCategoriesList = () =>{
+    setOpen((prev)=>!prev)
 }
 
 
@@ -35,19 +41,31 @@ const onBlur = () =>{
  
  return (
         <di className="home">
-        <div className={controlsStyle}
-         onClick={()=>setControlsStyle("mainControls drop")}
-         onBlur={()=>onBlur()}
+            <MainControl
+             controlsStyle={controlsStyle}
+             handleControlsDropdown={handleControlsDropdown} 
+             onBlurControlsDropdown={onBlurControlsDropdown}
+             onBlurCategoriesList={onBlurCategoriesList} 
+             handleOpenCategoriesList={handleOpenCategoriesList} 
+             onSort={onSort}
+             categoriesList={categoriesList}
+             open={open}
+             categoriesItems={categoriesItems}
+             onPriceFilter={onPriceFilter}
+             />
+        {/* <div className={controlsStyle}
+         onClick={()=>handleControlsDropdown()}
+         onBlur={()=>onBlurControlsDropdown()}
          tabIndex="0">
             <h4 className="title">Controls <i class="fas fa-caret-down arrow "></i></h4>
             <div className="categoryes">
                 <div 
                 ref={categoriesList}
-                 onBlur={()=>setOpen(false)}
+                 onBlur={()=>onBlurCategoriesList()}
                  tabIndex="0">
 
                 <div  className="dropDownList" 
-                onClick={()=>setOpen((prev)=>!prev)}>
+                onClick={()=>handleOpenCategoriesList()}>
                 <p>Categoryes</p> <i class="fas fa-caret-down arrow"></i>
                 </div>
 
@@ -68,7 +86,7 @@ const onBlur = () =>{
             <button className="btn" onClick={()=>onPriceFilter(1000)}>Product &lt; 1000$</button>
             </div>
 
-        </div>
+        </div> */}
         <div className="products">
             
             {prod}
