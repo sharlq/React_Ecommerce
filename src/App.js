@@ -19,9 +19,6 @@ const  App = () => {
     const fetchCategorys = async() => {
         const responce = await commerce.categories.list()
         setCategorys(responce)}
-    
-    
-    console.log(categorys)
 
     const searchFilter = (val) => {
         setSearchTerm(val)
@@ -47,7 +44,6 @@ const  App = () => {
         fetchProducts();
         fetchCart();
         fetchCategorys();
-       // emptyCart ();
     },[])
 
     const handleAddToCart =async(productID,quantity) =>{
@@ -73,7 +69,6 @@ const  App = () => {
     }
 
     const handleCaptureCheckout = async(checkoutTokenId,newOrder)=>{
-        console.log("token",checkoutTokenId,"order",newOrder)
         try{
             console.log("STOIC")
             const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
@@ -90,19 +85,23 @@ const  App = () => {
     }
 
     const handleCategory = (cat) =>{
-        const categoryProducts = products.filter((i)=>{return cat===i.categories[0].name})
-        console.log(categoryProducts)
+        const categoryProducts =  products.filter((i)=>{return cat===i.categories[0].name})
         setProducts(categoryProducts)
-
     }
     
-
+    const handleSort =(sortingType)=>{
+        if(sortingType==="incremental"){
+        const sorted = products.sort((a,b)=>(a.price.raw - b.price.raw))
+        setProducts(()=>[...sorted])}
+        else{
+            const sorted = products.sort((a,b)=>(b.price.raw - a.price.raw))
+             setProducts(()=>[...sorted])
+        }
+        
+    }
     console.log(products,cart);
 
-   // handleAddToCart(products[0].id,1);
-
-    //console.log(products[0].id,cart);
-
+    
 
     return (
         <Router>
@@ -116,7 +115,8 @@ const  App = () => {
             openProductPage={handleProductPage}
             searchTerm={searchTerm}
             onCategory={handleCategory}
-            categorys={categorys}/> 
+            categorys={categorys}
+            onSort={handleSort}/> 
             </Route>
 
             <Route path="/cart">

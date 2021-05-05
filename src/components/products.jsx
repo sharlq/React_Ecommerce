@@ -2,12 +2,16 @@ import React ,{useState,useEffect} from 'react'
 import Product from './product/product'
 
 
-const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onCategory}) => {
+const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onCategory,onSort}) => {
 const [categorysButtons, setCategorysButtons] = useState([])
+const [open, setOpen] = useState(false)
 
 useEffect(()=>{if(categorys){
-     setCategorysButtons(()=>categorys.data.map((i)=><button className="btn" onClick={()=>onCategory(i.name)}>{i.name}</button> ))
-}},[categorys])
+     setCategorysButtons(()=>categorys.data.map((i)=><li className="" onClick={()=>onCategory(i.name)}>{i.name}</li> ))
+}},[products,categorys])
+
+
+    
 
 
  const prod =products.filter((val)=>{
@@ -22,8 +26,22 @@ useEffect(()=>{if(categorys){
         <di className="home">
         <div className="mainControls">
             <div className="categoryes">
-                <h3>Categoryes</h3>
-                {categorysButtons}
+                <div onBlur={()=>setOpen(false)} tabIndex="0">
+
+                <div className="dropDownList" 
+                onClick={()=>setOpen((prev)=>!prev)}>
+                <p>Categoryes</p> <i class="fas fa-caret-down arrow"></i>
+                </div>
+
+                {open && <div className="dropDownList-items">{categorysButtons}</div> }
+                
+                </div>
+            </div>
+
+            <div className="sorting">
+            <h3>Sorting</h3>
+            <button className="btn" onClick={()=>onSort("incremental")}>Sort by price incremental</button>
+            <button className="btn" onClick={()=>onSort("decremental")}>Sort by price decremental</button>
             </div>
         </div>
         <div className="products">
