@@ -74,6 +74,55 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  min-height: 150px;
+}
+
+.home .mainControls .categoryes .dropDownList {
+  cursor: pointer;
+  padding-left: 5px;
+  margin-top: 2vh;
+  height: 26px;
+  width: 150px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home .mainControls .categoryes .dropDownList .arrow {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding-right: 5px;
+}
+
+.home .mainControls .categoryes .dropDownList-items {
+  position: relative;
+  top: -3px;
+  overflow: hidden;
+  z-index: 2;
+  background: white;
+  width: 155px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: none;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.home .mainControls .categoryes .dropDownList-items li {
+  cursor: pointer;
+  padding-left: 5px;
+  list-style: none;
+}
+
+.home .mainControls .categoryes .dropDownList-items li:hover {
+  background: whitesmoke;
 }
 
 .home .mainControls .btn {
@@ -81,6 +130,21 @@ button {
   width: 150px;
   background: #00a0fd;
   color: white;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.home .mainControls .sorting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .home .products {

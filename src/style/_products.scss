@@ -15,12 +15,59 @@ grid-template-columns: 1fr 4fr;
         align-items: center;
         justify-items: center;
         flex-direction: column;
+        min-height: 150px;
+      
+        .dropDownList{
+            cursor: pointer;
+            padding-left: 5px;
+            margin-top: 2vh;
+            height:26px;
+            width: 150px;
+            background: white;
+            border:1px solid rgba(0, 0, 0, .3);
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            .arrow{
+                align-self: center;
+                padding-right: 5px;
+            } 
+        }
+        .dropDownList-items{
+            position: relative;
+            top: -3px;
+            overflow: hidden;
+            z-index: 2;
+            
+            background: white;
+            width: 155px;
+            border:1px solid rgba(0, 0, 0, .3);
+            border-top:none;
+            border-radius: 5px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+            li{
+                cursor: pointer;
+                padding-left: 5px;
+                list-style:none ;
+            }
+            li:hover{
+                background: whitesmoke;
+            }
+        }
     }
     .btn{
         font-size: 1em;
         width: 150px;
         background: rgb(0, 160, 253);
         color:$primary ;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .sorting{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     }
 }
 .products{
