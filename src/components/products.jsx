@@ -1,4 +1,4 @@
-import React ,{useState,useEffect} from 'react'
+import React ,{useState,useEffect,useRef} from 'react'
 import Product from './product/product'
 
 
@@ -6,7 +6,7 @@ const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onPriceFi
 const [categorysButtons, setCategorysButtons] = useState([])
 const [open, setOpen] = useState(false)
 const [controlsStyle,setControlsStyle] = useState("mainControls")
-
+const categoriesList = useRef()
 const handleControlsDropdown = () =>{
     setControlsStyle("mainControls drop")
 }
@@ -15,7 +15,14 @@ useEffect(()=>{if(categorys){
 }},[products,categorys])
 
 
-    
+const onBlur = () =>{
+    setTimeout(()=>{
+    if (document.activeElement !== categoriesList.current) {
+
+        setControlsStyle("mainControls")      }
+    },50)
+       
+}
 
 
  const prod =products.filter((val)=>{
@@ -30,14 +37,16 @@ useEffect(()=>{if(categorys){
         <di className="home">
         <div className={controlsStyle}
          onClick={()=>setControlsStyle("mainControls drop")}
-         onBlur={()=>setControlsStyle("mainControls")}
-         tabIndex="-1">
+         onBlur={()=>onBlur()}
+         tabIndex="0">
             <h4 className="title">Controls <i class="fas fa-caret-down arrow "></i></h4>
             <div className="categoryes">
-                <div onBlur={()=>setOpen(false)}
+                <div 
+                ref={categoriesList}
+                 onBlur={()=>setOpen(false)}
                  tabIndex="0">
 
-                <div className="dropDownList" 
+                <div  className="dropDownList" 
                 onClick={()=>setOpen((prev)=>!prev)}>
                 <p>Categoryes</p> <i class="fas fa-caret-down arrow"></i>
                 </div>
