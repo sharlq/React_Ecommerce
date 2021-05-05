@@ -10,7 +10,11 @@ const Controls = ({
     categoriesList,
     open,
     categoriesItems,
-    onPriceFilter}) => {
+    onPriceFilter,
+    firstSortingButton,
+    secondSortingButton,
+    firstFilterButton,
+    secondFilterButton}) => {
 
 
     return (
@@ -37,14 +41,14 @@ const Controls = ({
 
            <div className="sorting">
            <h3>Sorting</h3>
-           <button className="btn" onClick={()=>onSort("incremental")}>Sort by price incremental</button>
-           <button className="btn" onClick={()=>onSort("decremental")}>Sort by price decremental</button>
+           <button ref={firstSortingButton} className="btn" onClick={()=>onSort("decremental")}>Sort by price decremental</button>
+           <button ref={secondSortingButton} className="btn" onClick={()=>onSort("incremental")}>Sort by price incremental</button>
            </div>
 
            <div className="sorting">
            <h3>Price filter</h3>
-           <button className="btn" onClick={()=>onPriceFilter(100)}>Product &lt; 100$</button>
-           <button className="btn" onClick={()=>onPriceFilter(1000)}>Product &lt; 1000$</button>
+           <button ref={firstFilterButton} className="btn" onClick={()=>onPriceFilter(100)}>Product &lt; 100$</button>
+           <button ref={secondFilterButton} className="btn" onClick={()=>onPriceFilter(1000)}>Product &lt; 1000$</button>
            </div>
            
        </div>
