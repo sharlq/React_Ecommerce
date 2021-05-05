@@ -15,6 +15,7 @@ const  App = () => {
     const [errorMessage,setErrorMessage]= useState("")
     const [searchTerm,setSearchTerm]= useState("")
     const [categorys,setCategorys] = useState()
+    const [productsContainer,setProductsContainer] = useState([])
 
     const fetchCategorys = async() => {
         const responce = await commerce.categories.list()
@@ -27,6 +28,7 @@ const  App = () => {
     const fetchProducts = async()=>{
         const {data} = await commerce.products.list();
         setProducts(data)
+        setProductsContainer(data)
     }
 
     const fetchCart = async() => {
@@ -35,16 +37,17 @@ const  App = () => {
 
     const emptyCart = async() => {
         const response = await commerce.cart.empty();
-
         setCart(response.cart);
     }
     
 
-    useEffect(()=>{
+    useEffect(async()=>{
         fetchProducts();
         fetchCart();
         fetchCategorys();
     },[])
+
+
 
     const handleAddToCart =async(productID,quantity) =>{
         const added = await commerce.cart.add(productID,quantity);
@@ -70,10 +73,8 @@ const  App = () => {
 
     const handleCaptureCheckout = async(checkoutTokenId,newOrder)=>{
         try{
-            console.log("STOIC")
             const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
             setOrder(incomingOrder);
-            console.log("incomingOrder",incomingOrder)
             refreshCart();
         }catch(error){
             setErrorMessage(error.data.error.message)
@@ -84,26 +85,31 @@ const  App = () => {
         setProduct(item)
     }
 
-    const handleCategory = (cat) =>{
-        const categoryProducts =  products.filter((i)=>{return cat===i.categories[0].name})
-        setProducts(categoryProducts)
+    const handleCategory = async(cat) =>{
+         
+         console.log("products container",productsContainer)
+         const categoryProducts =  products.filter((i)=>{return cat===i.categories[0].name})
+         setProductsContainer(categoryProducts)
+         console.log("products container",productsContainer)
+       
     }
     
     const handleSort =(sortingType)=>{
+        
         if(sortingType==="incremental"){
         const sorted = products.sort((a,b)=>(a.price.raw - b.price.raw))
-        setProducts(()=>[...sorted])}
+        setProductsContainer(()=>[...sorted])}
         else{
             const sorted = products.sort((a,b)=>(b.price.raw - a.price.raw))
-             setProducts(()=>[...sorted])
+            setProductsContainer(()=>[...sorted])
         }
     }
 
     const handlePriceFilter = (price) =>{
         const filtered = products.filter((i)=>i.price.raw<price)
-        setProducts(filtered)
+        setProductsContainer(filtered)
     }
-    console.log(products,cart);
+    console.log("products,cart",productsContainer);
 
     
 
@@ -114,7 +120,7 @@ const  App = () => {
 
             <Route path="/" exact>
             <Products 
-            products={products} 
+            products={productsContainer} 
             onAdd={handleAddToCart}
             openProductPage={handleProductPage}
             searchTerm={searchTerm}
