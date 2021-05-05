@@ -1,4 +1,5 @@
 .home{
+height: 100%;
 display: grid;
 grid-template-columns: 1fr 4fr;
 .mainControls{
@@ -58,7 +59,7 @@ grid-template-columns: 1fr 4fr;
     }
     .btn{
         font-size: 1em;
-        width: 150px;
+        width: 165px;
         background: rgb(0, 160, 253);
         color:$primary ;
         margin-top: 20px;
@@ -72,7 +73,7 @@ grid-template-columns: 1fr 4fr;
 }
 .products{
 
-    margin: auto;
+    margin: 0 auto 0 auto;
     width:80vw ;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

@@ -97,7 +97,11 @@ const  App = () => {
             const sorted = products.sort((a,b)=>(b.price.raw - a.price.raw))
              setProducts(()=>[...sorted])
         }
-        
+    }
+
+    const handlePriceFilter = (price) =>{
+        const filtered = products.filter((i)=>i.price.raw<price)
+        setProducts(filtered)
     }
     console.log(products,cart);
 
@@ -116,7 +120,8 @@ const  App = () => {
             searchTerm={searchTerm}
             onCategory={handleCategory}
             categorys={categorys}
-            onSort={handleSort}/> 
+            onSort={handleSort}
+            onPriceFilter={handlePriceFilter}/> 
             </Route>
 
             <Route path="/cart">
