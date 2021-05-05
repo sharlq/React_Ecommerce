@@ -7,6 +7,10 @@ const [categoriesItems, setCategoriesItems] = useState([])
 const [open, setOpen] = useState(false)
 const [controlsStyle,setControlsStyle] = useState("mainControls")
 const categoriesList = useRef()
+const firstSortingButton = useRef()
+const secondSortingButton = useRef()
+const firstFilterButton = useRef()
+const secondFilterButton = useRef()
 
 
 useEffect(()=>{if(categorys){
@@ -19,7 +23,12 @@ const handleControlsDropdown = () =>{
 }
 const onBlurControlsDropdown = () =>{
     setTimeout(()=>{
-    if (document.activeElement !== categoriesList.current) {
+    if (document.activeElement !== categoriesList.current &&
+        document.activeElement !== firstSortingButton.current &&
+        document.activeElement !== secondSortingButton.current &&
+        document.activeElement !== firstFilterButton.current &&
+        document.activeElement !== secondFilterButton.current 
+        ) {
         setControlsStyle("mainControls")      }
     },50)       
 }
@@ -52,6 +61,10 @@ const handleOpenCategoriesList = () =>{
              open={open}
              categoriesItems={categoriesItems}
              onPriceFilter={onPriceFilter}
+             firstSortingButton={firstSortingButton}
+             secondSortingButton={secondSortingButton}
+             firstFilterButton={firstFilterButton}
+             secondFilterButton={secondFilterButton}
              />
         {/* <div className={controlsStyle}
          onClick={()=>handleControlsDropdown()}
