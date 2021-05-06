@@ -97,10 +97,10 @@ const  App = () => {
     const handleSort =(sortingType)=>{
         
         if(sortingType==="incremental"){
-        const sorted = products.sort((a,b)=>(a.price.raw - b.price.raw))
+        const sorted = productsContainer.sort((a,b)=>(a.price.raw - b.price.raw))
         setProductsContainer(()=>[...sorted])}
         else{
-            const sorted = products.sort((a,b)=>(b.price.raw - a.price.raw))
+            const sorted = productsContainer.sort((a,b)=>(b.price.raw - a.price.raw))
             setProductsContainer(()=>[...sorted])
         }
     }
@@ -108,6 +108,10 @@ const  App = () => {
     const handlePriceFilter = (price) =>{
         const filtered = products.filter((i)=>i.price.raw<price)
         setProductsContainer(filtered)
+    }
+
+    const handleViewAll = () =>{
+        setProductsContainer(products)
     }
     console.log("products,cart",productsContainer);
 
@@ -120,14 +124,15 @@ const  App = () => {
 
             <Route path="/" exact>
             <Products 
-            products={productsContainer} 
+            products={productsContainer}
             onAdd={handleAddToCart}
             openProductPage={handleProductPage}
             searchTerm={searchTerm}
             onCategory={handleCategory}
             categorys={categorys}
             onSort={handleSort}
-            onPriceFilter={handlePriceFilter}/> 
+            onPriceFilter={handlePriceFilter}
+            onViewAll={handleViewAll}/> 
             </Route>
 
             <Route path="/cart">

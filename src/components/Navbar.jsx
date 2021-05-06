@@ -15,7 +15,7 @@ const Navbar = ({cartt,search}) => {
 
     return (
         <nav className="navbar">
-            <Link className="logo" to="/">
+            <Link className="logo" to="/"  >
             <div >
             <i className="fas fa-store-alt"> Store name</i>
             </div>

@@ -19,7 +19,7 @@ grid-template-columns: 1fr 4fr;
         }
     }
     h3{
-        margin: 2vh 0;
+        margin: 1vh 0;
     }
     .categoryes {
         display: flex;
@@ -69,12 +69,12 @@ grid-template-columns: 1fr 4fr;
     }
     .btn{
         font-size: 1em;
-        width: 165px;
+        width: 170px;
         background: rgb(0, 160, 253);
         color:$primary ;
-        margin-top: 20px;
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
+    
     .sorting{
     display: flex;
     flex-direction: column;
