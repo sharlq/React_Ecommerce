@@ -14,7 +14,9 @@ const Controls = ({
     firstSortingButton,
     secondSortingButton,
     firstFilterButton,
-    secondFilterButton}) => {
+    secondFilterButton,
+    viewAllRef,
+    onViewAll}) => {
 
 
     return (
@@ -49,6 +51,7 @@ const Controls = ({
            <h3>Price filter</h3>
            <button ref={firstFilterButton} className="btn" onClick={()=>onPriceFilter(100)}>Product &lt; 100$</button>
            <button ref={secondFilterButton} className="btn" onClick={()=>onPriceFilter(1000)}>Product &lt; 1000$</button>
+           <button ref={viewAllRef} className="btn " onClick={()=>onViewAll()}>View All</button>
            </div>
            
        </div>

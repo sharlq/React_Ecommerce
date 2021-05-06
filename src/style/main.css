@@ -77,7 +77,7 @@ button {
 }
 
 .home .mainControls h3 {
-  margin: 2vh 0;
+  margin: 1vh 0;
 }
 
 .home .mainControls .categoryes {
@@ -145,11 +145,10 @@ button {
 
 .home .mainControls .btn {
   font-size: 1em;
-  width: 165px;
+  width: 170px;
   background: #00a0fd;
   color: white;
-  margin-top: 20px;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 .home .mainControls .sorting {

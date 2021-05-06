@@ -2,7 +2,18 @@ import React ,{useState,useEffect,useRef} from 'react'
 import Product from './product/product'
 import MainControl from './controls/controls'
 
-const Products = ({products,categorys,onAdd,searchTerm,openProductPage,onPriceFilter,onCategory,onSort}) => {
+const Products = ({
+    products,
+    categorys,
+    onAdd,
+    searchTerm,
+    openProductPage,
+    onPriceFilter,
+    onCategory,
+    onSort,
+    onViewAll
+    }) => {
+
 const [categoriesItems, setCategoriesItems] = useState([])
 const [open, setOpen] = useState(false)
 const [controlsStyle,setControlsStyle] = useState("mainControls")
@@ -11,6 +22,7 @@ const firstSortingButton = useRef()
 const secondSortingButton = useRef()
 const firstFilterButton = useRef()
 const secondFilterButton = useRef()
+const viewAllRef =useRef()
 
 
 useEffect(()=>{if(categorys){
@@ -27,7 +39,8 @@ const onBlurControlsDropdown = () =>{
         document.activeElement !== firstSortingButton.current &&
         document.activeElement !== secondSortingButton.current &&
         document.activeElement !== firstFilterButton.current &&
-        document.activeElement !== secondFilterButton.current 
+        document.activeElement !== secondFilterButton.current &&
+        document.activeElement !== viewAllRef.current
         ) {
         setControlsStyle("mainControls")      }
     },50)       
@@ -65,6 +78,8 @@ const handleOpenCategoriesList = () =>{
              secondSortingButton={secondSortingButton}
              firstFilterButton={firstFilterButton}
              secondFilterButton={secondFilterButton}
+             viewAllRef={viewAllRef}
+             onViewAll={onViewAll}
              />
         {/* <div className={controlsStyle}
          onClick={()=>handleControlsDropdown()}
