@@ -17,12 +17,8 @@ const Products = ({
 const [categoriesItems, setCategoriesItems] = useState([])
 const [open, setOpen] = useState(false)
 const [controlsStyle,setControlsStyle] = useState("mainControls")
-const categoriesList = useRef()
-const firstSortingButton = useRef()
-const secondSortingButton = useRef()
-const firstFilterButton = useRef()
-const secondFilterButton = useRef()
-const viewAllRef =useRef()
+const refsArray = useRef([])
+
 
 
 useEffect(()=>{if(categorys){
@@ -35,13 +31,7 @@ const handleControlsDropdown = () =>{
 }
 const onBlurControlsDropdown = () =>{
     setTimeout(()=>{
-    if (document.activeElement !== categoriesList.current &&
-        document.activeElement !== firstSortingButton.current &&
-        document.activeElement !== secondSortingButton.current &&
-        document.activeElement !== firstFilterButton.current &&
-        document.activeElement !== secondFilterButton.current &&
-        document.activeElement !== viewAllRef.current
-        ) {
+    if (!refsArray.current.includes(document.activeElement)) {
         setControlsStyle("mainControls")      }
     },50)       
 }
@@ -59,7 +49,7 @@ const handleOpenCategoriesList = () =>{
      }else if(val.name.toLowerCase().includes(searchTerm.toLowerCase())){return val}
  }).map(i  => <Product item={i} onAdd={onAdd} openProductPage={openProductPage} /> );
    
- 
+ console.log(refsArray.current,refsArray.current.includes(document.activeElement))
  
  return (
         <di className="home">
@@ -70,15 +60,10 @@ const handleOpenCategoriesList = () =>{
              onBlurCategoriesList={onBlurCategoriesList} 
              handleOpenCategoriesList={handleOpenCategoriesList} 
              onSort={onSort}
-             categoriesList={categoriesList}
+             refsArray={refsArray}
              open={open}
-             categoriesItems={categoriesItems}
              onPriceFilter={onPriceFilter}
-             firstSortingButton={firstSortingButton}
-             secondSortingButton={secondSortingButton}
-             firstFilterButton={firstFilterButton}
-             secondFilterButton={secondFilterButton}
-             viewAllRef={viewAllRef}
+             categoriesItems={categoriesItems}
              onViewAll={onViewAll}
              />
         {/* <div className={controlsStyle}
