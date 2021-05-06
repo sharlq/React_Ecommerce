@@ -3,8 +3,7 @@ import CartItem from './cart-item';
 import {Link} from "react-router-dom";
 
 const Cart = ({cart , UpdateCart , RemoveItem ,Empty}) => {
-    /*let cartLineItems=cart.line_items;
-    console.log("saf",cartLineItems)*/
+
 
     if(!cart.line_items){return(<div className="loading"><i class="fas fa-circle-notch motion"></i></div>)}
     const pro =cart.line_items.map(i  =><CartItem cart={i} handleUpdateCart={UpdateCart} handleRemoveItem={RemoveItem} /> );
