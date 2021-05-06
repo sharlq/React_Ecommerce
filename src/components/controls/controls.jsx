@@ -7,27 +7,25 @@ const Controls = ({
     onBlurCategoriesList,
     handleOpenCategoriesList,
     onSort,
-    categoriesList,
+    refsArray,
     open,
     categoriesItems,
     onPriceFilter,
-    firstSortingButton,
-    secondSortingButton,
-    firstFilterButton,
-    secondFilterButton,
-    viewAllRef,
     onViewAll}) => {
 
 
     return (
         <div className={controlsStyle}
+        key="controls1"
+        ref={(element)=>{if(!refsArray.current.includes(element)&&element){refsArray.current.push(element)}}}
         onClick={()=>handleControlsDropdown()}
         onBlur={()=>onBlurControlsDropdown()}
         tabIndex="0">
            <h4 className="title">Controls <i class="fas fa-caret-down arrow "></i></h4>
            <div className="categoryes">
                <div 
-               ref={categoriesList}
+               key="controls2"
+               ref={(element)=>{if(!refsArray.current.includes(element)&&element){refsArray.current.push(element)}}}
                 onBlur={()=>onBlurCategoriesList()}
                 tabIndex="0">
 
@@ -43,15 +41,23 @@ const Controls = ({
 
            <div className="sorting">
            <h3>Sorting</h3>
-           <button ref={firstSortingButton} className="btn" onClick={()=>onSort("decremental")}>Sort by price decremental</button>
-           <button ref={secondSortingButton} className="btn" onClick={()=>onSort("incremental")}>Sort by price incremental</button>
+           <button key="controls3" ref={(element)=>{if(!refsArray.current.includes(element)&&element){refsArray.current.push(element)}}} 
+           className="btn" onClick={()=>onSort("decremental")}>Sort by price decremental</button>
+           
+           <button key="controls4" ref={(element)=>{if(!refsArray.current.includes(element)&&element){refsArray.current.push(element)}}}
+            className="btn" onClick={()=>onSort("incremental")}>Sort by price incremental</button>
            </div>
 
            <div className="sorting">
            <h3>Price filter</h3>
-           <button ref={firstFilterButton} className="btn" onClick={()=>onPriceFilter(100)}>Product &lt; 100$</button>
-           <button ref={secondFilterButton} className="btn" onClick={()=>onPriceFilter(1000)}>Product &lt; 1000$</button>
-           <button ref={viewAllRef} className="btn " onClick={()=>onViewAll()}>View All</button>
+           <button key="controls5" ref={(element)=>{if(!refsArray.current.includes(element)&&element){refsArray.current.push(element)}}}
+            className="btn" onClick={()=>onPriceFilter(100)}>Product &lt; 100$</button>
+
+           <button key="controls6" ref={(element)=>{if(!refsArray.current.includes(element)&&element){refsArray.current.push(element)}}}
+            className="btn" onClick={()=>onPriceFilter(1000)}>Product &lt; 1000$</button>
+
+           <button key="controls7" ref={(element)=>{if(!refsArray.current.includes(element)&&element){refsArray.current.push(element)}}}
+            className="btn " onClick={()=>onViewAll()}>View All</button>
            </div>
            
        </div>
