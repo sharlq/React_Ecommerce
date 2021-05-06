@@ -330,10 +330,11 @@
                     display: contents;
                 }
             }
+            transition: height 1s;
         }
         .drop{
            
-            height: 70vh !important;
+            height: 75vh !important;
             
         }
      .products{
