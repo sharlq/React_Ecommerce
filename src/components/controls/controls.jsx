@@ -21,7 +21,7 @@ const Controls = ({
         onClick={()=>handleControlsDropdown()}
         onBlur={()=>onBlurControlsDropdown()}
         tabIndex="0">
-           <h4 className="title">Controls <i class="fas fa-caret-down arrow "></i></h4>
+           <h4 className="title">Controls <i className="fas fa-caret-down arrow "></i></h4>
            <div className="categoryes">
                <div 
                key="controls2"
@@ -31,7 +31,7 @@ const Controls = ({
 
                <div  className="dropDownList" 
                onClick={()=>handleOpenCategoriesList()}>
-               <p>Categoryes</p> <i class="fas fa-caret-down arrow"></i>
+               <p>Categoryes</p> <i className="fas fa-caret-down arrow"></i>
                </div>
 
                {open && <div className="dropDownList-items">{categoriesItems}</div> }
