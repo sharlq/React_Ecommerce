@@ -1266,12 +1266,14 @@ h4 {
     width: 100%;
     height: 50px;
     overflow: hidden;
+    -webkit-transition: height 1s;
+    transition: height 1s;
   }
   .home .mainControls .title .arrow {
     display: contents;
   }
   .home .drop {
-    height: 70vh !important;
+    height: 75vh !important;
   }
   .home .products {
     justify-items: center;
