@@ -21,7 +21,7 @@ const Controls = ({
         onClick={()=>handleControlsDropdown()}
         onBlur={()=>onBlurControlsDropdown()}
         tabIndex="0">
-           <h4 className="title">Controls <i className="fas fa-caret-down arrow "></i></h4>
+           <h4 className="title" onClick={()=>onBlurCategoriesList()}>Controls <i className="fas fa-caret-down arrow "></i></h4>
            <div className="categoryes">
                <div 
                key="controls2"

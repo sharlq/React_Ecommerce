@@ -1051,6 +1051,17 @@ h4 {
 }
 
 @media only screen and (max-width: 1000px) {
+  .home .mainControls {
+    width: 22vw;
+    margin-right: 2vw;
+  }
+  .home .mainControls .btn {
+    font-size: 1.5vw;
+    width: 140px;
+  }
+  .home .mainControls .dropDownList {
+    width: 140px !important;
+  }
   .home .products {
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
@@ -1271,6 +1282,11 @@ h4 {
   }
   .home .mainControls .title .arrow {
     display: contents;
+  }
+  .home .mainControls .btn {
+    font-size: 4vw;
+    width: 135px;
+    margin-bottom: 2vw;
   }
   .home .drop {
     height: 75vh !important;
