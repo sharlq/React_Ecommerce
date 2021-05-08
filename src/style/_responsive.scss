@@ -92,6 +92,17 @@
 
 @media only screen and (max-width:1000px){
     .home{
+        .mainControls{
+            width: 22vw;
+            margin-right: 2vw;
+            .btn{
+                font-size:1.5vw;
+                width:140px;
+            }
+            .dropDownList{
+                width:140px !important;
+            }
+        }
     .products{
         grid-template-columns: 1fr 1fr  ;
         &__product{
@@ -303,7 +314,7 @@
         .btn{
             margin-top: 0;
             margin-left: 2vw;
-
+            
         }
  
     }
@@ -331,6 +342,12 @@
                 }
             }
             transition: height 1s;
+            .btn{
+                font-size: 4vw;
+                width: 135px;
+                margin-bottom: 2vw;
+            }
+
         }
         .drop{
            
